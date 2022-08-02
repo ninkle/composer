@@ -18,7 +18,7 @@ import warnings
 from typing import Type
 
 from composer.loggers import LogLevel
-from composer.trainer.trainer_hparams import EvalHparams
+from composer.trainer.trainer_hparams import ExperimentHparams
 from composer.utils import dist
 
 
@@ -42,7 +42,7 @@ def _main():
     if len(sys.argv) == 1:
         sys.argv.append('--help')
 
-    hparams = EvalHparams.create(cli_args=True)  # reads cli args from sys.argv
+    hparams = ExperimentHparams.create(cli_args=True)  # reads cli args from sys.argv
 
     trainer = hparams.initialize_object()
 
